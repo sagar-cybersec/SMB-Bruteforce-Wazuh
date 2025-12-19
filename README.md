@@ -172,4 +172,8 @@ Wazuh Alerts
 - Gained hands-on experience with log analysis and threat hunting workflows.
 - Strengthened understanding of SOC alert validation and attacker behavior analysis.
 
-
+## 📖 Lessons Learned
+- SIEM detections are based on authentication patterns and log behavior.
+- NTLM authentication over SMB can lead to Pass-the-Hash detections even when password-based attempts are used.
+- Multiple failed logon attempts followed by a successful authentication is a strong indicator of credential compromise.
+- Proper network isolation is essential when simulating real-world attacks in a home lab environment.
