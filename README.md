@@ -131,6 +131,7 @@ nmap -p 139,445 192.168.0.4
 
 <img width="822" height="260" alt="SMB-port-validation" src="https://github.com/user-attachments/assets/867226da-60ff-4b1c-aa3a-d2cb1a377b7e" />
 
+<img width="1135" height="357" alt="SMB-attack-Kali" src="https://github.com/user-attachments/assets/67d50c19-d8e7-4f13-ad44-077f721d9af9" />
 
 ## 📊 Detection & Analysis (Wazuh)
 
