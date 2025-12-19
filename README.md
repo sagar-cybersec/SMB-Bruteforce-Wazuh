@@ -118,7 +118,7 @@ Simulate SMB brute-force attacks and detect failed authentication attempts using
 
 ## ⚙️ Tools & Technologies Used
 
-## 🧪 Attack Simulation - SMB Brute-force
+## 🧪 Attack Simulation - SMB Brute-force/Authentication attack
 
 - **Target Machine**: Windows-Victim  
 - **IP Address**: 192.168.0.4  
@@ -133,7 +133,30 @@ nmap -p 139,445 192.168.0.4
 
 <img width="1135" height="357" alt="SMB-attack-Kali" src="https://github.com/user-attachments/assets/67d50c19-d8e7-4f13-ad44-077f721d9af9" />
 
+Although a password wordlist was used during the attack, the authentication mechanism leveraged NTLM hashes over SMB. Based on this behavior, Wazuh classified the activity as a **Pass-the-Hash** style attack.
+
 ## 📊 Detection & Analysis (Wazuh)
+
+The Windows victim machine was configured with the Wazuh Agent to forward Windows Security Event Logs to the Wazuh Manager.
+
+The following event IDs were collected and analyzed:
+- **4625** – Failed logon attempt
+- **4624** – Successful logon
+
+These events were generated during the SMB brute-force attack.
+Wazuh correlated repeated authentication failures and generated security alerts indicating a potential pass-the-hash attack.
+
+Key indicators observed:
+- Multiple failed NTLM authentication attempts
+- Repeated logon failures from a single source IP (Kali Linux)
+- Successful authentication after multiple failures
+
+### Threat Hunting
+Using the Wazuh Dashboard, authentication logs were filtered and analyzed to validate the attack pattern and identify:
+- Attacker IP address
+- Target hostname
+- Logon type
+- Timestamp and frequency of attempts
 
 ## 🚨 Alerts & Logs Observed
 
