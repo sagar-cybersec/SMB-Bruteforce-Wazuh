@@ -118,7 +118,19 @@ Simulate SMB brute-force attacks and detect failed authentication attempts using
 
 ## ⚙️ Tools & Technologies Used
 
-## 🧪 Attack Simulation
+## 🧪 Attack Simulation - SMB Brute-force
+
+- **Target Machine**: Windows-Victim  
+- **IP Address**: 192.168.0.4  
+- **Service Attacked**: SMB  
+- **Ports**: TCP 445, TCP 139  
+- **Authentication Protocol**: NTLM
+
+Before launching the attack, an Nmap scan was performed to verify that SMB ports were open on the target system.
+nmap -p 139,445 192.168.0.4
+
+<img width="822" height="260" alt="SMB-port-validation" src="https://github.com/user-attachments/assets/867226da-60ff-4b1c-aa3a-d2cb1a377b7e" />
+
 
 ## 📊 Detection & Analysis (Wazuh)
 
