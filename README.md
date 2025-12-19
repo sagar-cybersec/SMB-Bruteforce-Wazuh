@@ -114,9 +114,9 @@ The lab environment was built using VirtualBox with all machines connected to an
 
 Simulate SMB brute-force attacks and detect failed authentication attempts using Wazuh SIEM in a controlled lab environment.
 
-
-
 ## ⚙️ Tools & Technologies Used
+
+VirtualBox, Windows 11(Victim and SOC workstation), Kali Linux, wazuh server, Nmap, Wazuh dashboard, Wazuh Agent and Virtualization
 
 ## 🧪 Attack Simulation - SMB Brute-force/Authentication attack
 
@@ -159,9 +159,17 @@ Using the Wazuh Dashboard, authentication logs were filtered and analyzed to val
 - Timestamp and frequency of attempts
 
 ## 🚨 Alerts & Logs Observed
-
-## 🔐 Security Concepts Demonstrated
-
-## 📸 Screenshots
+Wazuh Alerts
+- **Pass-the-Hash Authentication Attempt Detected**
+- Multiple failed NTLM authentication attempts over SMB
+- Repeated logon failures from a single source IP address
 
 ## 🎯 Key Takeaways
+
+- Successfully simulated an SMB authentication attack in a controlled lab environment.
+- Demonstrated how Windows authentication events are generated and forwarded to a SIEM.
+- Observed how Wazuh detects Pass-the-Hash attacks based on NTLM authentication patterns.
+- Gained hands-on experience with log analysis and threat hunting workflows.
+- Strengthened understanding of SOC alert validation and attacker behavior analysis.
+
+
